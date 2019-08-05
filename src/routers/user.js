@@ -35,9 +35,9 @@ router.post("/users/login", async (req, res) => {
     user.tokens = user.tokens.concat({ token });
 
     await user.save();
-    res.status(200).send({ user, token });
+    res.status().send({ user, token });
   } catch (e) {
-    res.status(400).send("The account hasn't found. Pleas authorize");
+    res.status(400).send("The account hasn't been found. Please authorize");
   }
 });
 
